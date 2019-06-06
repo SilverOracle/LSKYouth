@@ -1,0 +1,21 @@
+#comments.comments-area
+    h3.comment-title Оставить коментаий
+    form.commentform(action='#', method='post')
+        div.comment-notes
+            span#email-notes Ваш e-mail адрес не будет публиковаться.
+            |   Обязательные поля обозначены 
+            span.required *
+        div.comment-form
+            label(for='comment') 
+            textarea.comment(name='comment', cols='45', rows='8', maxlength='65525', aria-required='true', required='required')
+        div.comment-form
+            label(for='author')
+            p Імя <span class='required'>*</span>
+            input.author(name='author', type='text', value='', size='30', maxlength='245', aria-required='true', required='required')
+        div.comment-form
+            label(for='email')
+            p E-mail <span class='required'>*</span>
+            input.email(name='email', type='text', value='', size='30', maxlength='100', aria-describedby='email-notes', aria-required='true', required='required')
+        div.comment-form
+            button.submit(name='submit', type='submit') Опубликовать коментарий
+
