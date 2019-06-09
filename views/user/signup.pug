@@ -1,5 +1,5 @@
-include common/layout.pug
-include common/header.pug
+include ../common/layout.pug
+include ../common/header.pug
 .container
   .row
     .col-sm-12.offset-md-2.col-md-8
@@ -10,7 +10,7 @@ include common/header.pug
             form(action='/signup', method='POST')
               div.formgroup
                 label.small.mb-1.mt-3 Email:
-                input.form-control(placeholder='Please enter your email', required=true, name='email', type='email', value=formData.email)
+                input.form-control(placeholder='Please enter your email', required=true, name='email', type='email', value='')
                 //- if (errors && errors.email)
                 //-   p.small.text-danger #{errors.email}
                 label.small.mb-1.mt-3 Password:
@@ -20,4 +20,4 @@ include common/header.pug
                 button.mt-3.btn.btn-primary(type='submit') Sign up
                 p.mt-2.mb-0
                   | Already have an account? #[a(href="/login") Log in here].
-include common/footer.pug
+include ../common/footer.pug

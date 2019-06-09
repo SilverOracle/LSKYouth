@@ -8,20 +8,21 @@ header
       ul.navbar-nav.mr-auto
         li.nav-item.active
           a.nav-link(href='/')
-            | Главная 
+            | Головна 
             span.sr-only (current)
         li.nav-item
-          a.nav-link(href='/views/news.pug') Новости
+          a.nav-link(href='/news') Новини
         li.nav-item
-          a.nav-link(href='/views/about.pug') О нас
+          a.nav-link(href='/about') Про нас
         li.nav-item
-          a.nav-link(href='/views/services.pug') Услуги
+          a.nav-link(href='/services') Послуги
         li.nav-item
-          a.nav-link(href='/views/projects.pug') Проекты
+          a.nav-link(href='/projects') Проекти
         li.nav-item
-          a.nav-link(href='/views/contacts.pug') Контакты
+          a.nav-link(href='/contacts') Контакти
       button.btn.btn-outline-danger.my-2.my-sm-0(href='#') Donate
-      button.btn.btn-primary.my-2.my-sm-0.ml-3.mr-3(href='#') Войти
+      a(href="/login")
+        button.btn.btn-primary.my-2.my-sm-0.ml-3.mr-3(type='submit') Війти
       form.form-inline.mt-2.mt-md-0
         .input-group
           input.form-control(type='text', placeholder='Search', aria-label='Search')

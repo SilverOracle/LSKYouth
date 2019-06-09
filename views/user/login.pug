@@ -1,8 +1,10 @@
+include ../common/layout.pug
+include ../common/header.pug
 .container.w-100.mt-5
     .row
         .col-sm-12.offset-md-2.col-md-8
             .jumbotron
-                h2.text-center Login
+                h2.text-center Війти
                 .row
                 .col-sm-12.col-md-12.col-xs-12
                     form(action='/login', method='POST')
@@ -19,3 +21,4 @@
                         | Forgot your password? #[a(href="#") Reset here].
                         p.m-0
                         | Don't have an account? #[a(href="/signup") Sign up here].
+include ../common/footer.pug

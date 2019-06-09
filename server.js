@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
-const config = require('config');
+const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const gm = require('gm');
 
@@ -14,7 +14,7 @@ const app = express();
 // Add path to images
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
-//app.use(express.static(path.join(__dirname + 'views')));
+app.use(express.static(path.join(__dirname + 'views')));
 
 app.set('view engine', 'pug');
 
@@ -22,27 +22,31 @@ app.set('view engine', 'pug');
 app.get('/', function (req, res) { 
     res.render('index.pug');
 });
-app.get('/views/home.pug', function (req, res) { 
-    res.render('home.pug');
-});
-app.get('/views/news.pug', function (req, res) { 
+// app.get('/home', function (req, res) { 
+//     res.render('./modules/main.pug');
+// });
+app.get('/news', function (req, res) { 
     res.render('news.pug');
 });
-app.get('/views/about.pug', function (req, res) { 
+app.get('/about', function (req, res) { 
     res.render('about.pug');
 });
-app.get('/views/services.pug', function (req, res) { 
+app.get('/services', function (req, res) { 
     res.render('services.pug');
 });
-app.get('/views/projects.pug', function (req, res) { 
+app.get('/projects', function (req, res) { 
     res.render('projects.pug');
 });
-app.get('/views/contacts.pug', function (req, res) { 
+app.get('/contacts', function (req, res) { 
     res.render('contacts.pug');
 });
 
-app.get('/views/user/signup.pug', function (req, res) { 
-    res.render('signup.pug');
+app.get('/login', function (req, res) { 
+    res.render('./user/login.pug');
+});
+
+app.get('/register', function (req, res) { 
+    res.render('./user/signup.pug');
 });
 
 // Body parser middleware
@@ -50,7 +54,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = config.get('mongoURI');
+const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
 mongoose
