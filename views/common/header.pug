@@ -1,7 +1,7 @@
 header
   nav.navbar.navbar-expand-lg.navbar-dark.fixed-top.bg-dark
     img.navbar-brand(src="/public/images/logo.png", width='40px', height='50px' alt="LSK")
-    a.navbar-brand(href='/') LSKYoyth
+    a.navbar-brand.LSK(href='/')  LSKYouth
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
     #navbarCollapse.collapse.navbar-collapse
@@ -27,6 +27,8 @@ header
         .input-group
           input.form-control(type='text', placeholder='Search', aria-label='Search')
           .input-group-append
-            button.btn.btn-outline-secondary(type='submit') Find
+            button.btn.btn-outline-secondary(type='submit')
+              i.fas.fa-search
+script(src='https://kit.fontawesome.com/4e0147fe52.js')
           
 

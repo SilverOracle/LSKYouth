@@ -22,9 +22,6 @@ app.set('view engine', 'pug');
 app.get('/', function (req, res) { 
     res.render('index.pug');
 });
-// app.get('/home', function (req, res) { 
-//     res.render('./modules/main.pug');
-// });
 app.get('/news', function (req, res) { 
     res.render('news.pug');
 });
@@ -44,7 +41,6 @@ app.get('/contacts', function (req, res) {
 app.get('/login', function (req, res) { 
     res.render('./user/login.pug');
 });
-
 app.get('/register', function (req, res) { 
     res.render('./user/signup.pug');
 });
