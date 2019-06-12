@@ -8,8 +8,9 @@ const fs = require('fs');
 const gm = require('gm');
 
 const users = require('./routes/api/users');
-const posts = require('./routes/api/posts');
-
+const articles = require('./routes/api/articles');
+const reportages = require('./routes/api/reportages');
+const events = require('./routes/api/events');
 const app = express();
 // Add path to images
 app.use("/public", express.static(path.join(__dirname, 'public')));
@@ -20,29 +21,29 @@ app.set('view engine', 'pug');
 
 // Navigation
 app.get('/', function (req, res) { 
-    res.render('index.pug');
+    res.render('index');
 });
 app.get('/news', function (req, res) { 
-    res.render('news.pug');
+    res.render('news');
 });
 app.get('/about', function (req, res) { 
-    res.render('about.pug');
+    res.render('about');
 });
 app.get('/services', function (req, res) { 
-    res.render('services.pug');
+    res.render('services');
 });
 app.get('/projects', function (req, res) { 
-    res.render('projects.pug');
+    res.render('projects');
 });
 app.get('/contacts', function (req, res) { 
-    res.render('contacts.pug');
+    res.render('contacts');
 });
 
 app.get('/login', function (req, res) { 
-    res.render('./user/login.pug');
+    res.render('./user/login');
 });
 app.get('/register', function (req, res) { 
-    res.render('./user/signup.pug');
+    res.render('./user/register');
 });
 
 // Body parser middleware
@@ -66,7 +67,9 @@ require('./config/passport')(passport);
 
 // Use Routes
 app.use('/api/users', users);
-app.use('/api/posts', posts);
+app.use('/api/articles', articles);
+app.use('/api/reportages', reportages);
+app.use('/api/events', events);
 
 const port = process.env.PORT || 3000
 

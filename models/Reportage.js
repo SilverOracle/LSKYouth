@@ -44,4 +44,4 @@ const ReportageSchema = new Schema({
   ]
 });
 
-module.exports = Reportage = mongoose.model('reportages', PostSchema);
+module.exports = Reportage = mongoose.model('reportages', ReportageSchema);
